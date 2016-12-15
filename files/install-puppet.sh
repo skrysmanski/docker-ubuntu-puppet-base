@@ -24,3 +24,10 @@ apt-get install puppet-agent
 
 # Remove downloaded file
 rm $FULL_FILE_NAME
+
+# Create symlinks
+PUPPET_BIN_DIR=/opt/puppetlabs/bin
+
+for file in $PUPPET_BIN_DIR/*; do
+	ln -s "$file" /usr/bin/
+done
